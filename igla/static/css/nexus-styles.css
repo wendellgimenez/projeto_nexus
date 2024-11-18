@@ -1,0 +1,84 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo principal verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+}
+
+.nexus-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo dentro do container */
+    align-items: center;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    max-width: 100%; /* Garante que o rodapé ocupe toda a largura disponível */
+    text-align: center;
+    background-color: #000000;
+    position: fixed; /* Fixa o rodapé no fundo da página */
+    bottom: 5px; /* Deixa 5px de espaço do final da tela */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Centraliza o rodapé horizontalmente */
+    padding: 10px 0;
+    color: #888888; /* Cor do texto no rodapé */
+}
+
+.nexus-logo {
+    width: 100%;
+    max-width: 500px; /* Faz o logo ser responsivo */
+    height: auto;
+    margin-bottom: -100px;
+}
+
+.nexus-subtitle {
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
+
+.nexus-tagline {
+    font-size: 14px;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.nexus-button {
+    display: inline-block;
+    background-color: #00ff9d;
+    color: #000000;
+    letter-spacing: 10px;
+    text-decoration: none;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 100px;
+    transition: background-color 0.3s;
+    margin-bottom: 300px; /* Espaçamento entre o botão e o restante */
+}
+
+.nexus-button:hover {
+    background-color: #00cc7d;
+    text-decoration: none;
+}
+
+.nexus-copyright {
+    font-size: 14px;
+    color: #888888;
+}

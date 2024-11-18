@@ -1,0 +1,93 @@
+body {
+    background-color: #000000; /* Fundo preto para a página */
+    display: flex;
+    flex-direction: column; /* Organiza elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente os elementos */
+    align-items: center; /* Centraliza horizontalmente os elementos */
+    min-height: 100vh; /* Altura mínima de 100% da viewport */
+    margin: 0; /* Remove margens padrão */
+    font-family: Arial, sans-serif; /* Define a fonte como Arial */
+}
+
+.login-container {
+    background-color: #000000; /* Fundo preto para o container de login */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    text-align: center; /* Centraliza o texto dentro do container */
+    width: 100%; /* O container ocupa toda a largura */
+    max-width: 400px; /* Largura máxima de 400px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve para dar profundidade */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    display: flex; /* Exibe o container como uma estrutura flexível */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza horizontalmente os elementos */
+}
+
+.logo {
+    width: 400px; /* Você pode ajustar a largura do logo conforme necessário */
+    margin-bottom: -2rem; /* Espaçamento abaixo do logo */
+}
+
+.form-group {
+    margin-bottom: 1rem; /* Espaçamento abaixo de cada grupo de entrada */
+}
+
+label {
+    display: block; /* Exibe o rótulo como bloco */
+    color: #ffffff; /* Cor do texto branco */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    margin-bottom: 0.5rem; /* Espaçamento abaixo do rótulo */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Ocupa toda a largura do container */
+    padding: 0.5rem; /* Espaçamento interno */
+    border: 1px solid #333333; /* Borda escura */
+    border-radius: 5px; /* Cantos arredondados */
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+
+.btn-login {
+    background-color: #00ff9d; /* Cor de fundo verde */
+    color: #000000; /* Texto preto */
+    border: none; /* Remove a borda padrão */
+    padding: 1rem 4rem; /* Espaçamento interno vertical e horizontal */
+    border-radius: 30px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-weight: bold; /* Texto em negrito */
+    font-size: larger;
+    margin-top: 1rem; /* Espaçamento acima do botão */
+    width: 100%; /* Ocupa toda a largura do container */
+    max-width: 200px; /* Define a largura máxima do botão */
+}
+
+.btn-login:hover {
+    background-color: #00cc7d; /* Cor mais escura no hover */
+    text-decoration: none; /* Remove a decoração do link */
+}
+
+.footer {
+    color: #ffffff; /* Texto branco no rodapé */
+    font-size: 0.8rem; /* Tamanho da fonte menor */
+    margin-top: 2rem; /* Espaçamento acima do rodapé */
+    position: absolute; /* Posicionamento fixo na parte inferior da página */
+    bottom: 0; /* Define a posição inferior para o rodapé */
+    width: 100%; /* Ocupa toda a largura */
+    text-align: center; /* Centraliza o texto */
+    padding: 1rem 0; /* Espaçamento interno vertical */
+}
+
+.messages {
+    list-style: none; /* Remove estilo da lista */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento abaixo da lista de mensagens */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.messages .error {
+    background-color: #ffcccc; /* Fundo vermelho claro para mensagens de erro */
+    border: 1px solid #ff0000; /* Borda vermelha */
+    color: #ff0000; /* Texto vermelho */
+}

@@ -1,0 +1,318 @@
+/* Estilos para o botão de editar */
+.btn-edit,
+.btn-edit:focus {
+    background-color: #12E19F !important;
+    border-color: #12E19F !important;
+    color: white !important;
+}
+
+.btn-edit:hover {
+    background-color: #0fa883 !important;
+    border-color: #0fa883 !important;
+    color: white !important;
+}
+
+/* Mantendo os estilos existentes dos outros botões */
+.btn-success,
+.btn-success:focus {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: white !important;
+}
+
+.btn-success:hover {
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+}
+
+.btn-secondary,
+.btn-secondary:focus {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: white !important;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268 !important;
+    border-color: #545b62 !important;
+}
+
+.btn-danger,
+.btn-danger:focus {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+}
+
+/* Ajustes para a tabela */
+.table-container {
+    margin: 0 5px; /* Espaçamento de 5px das bordas esquerda e direita */
+}
+
+.table-responsive {
+    width: 100%; /* Ocupa 100% da largura do contêiner pai */
+    margin: 0 auto; /* Centraliza o contêiner da tabela */
+}
+
+.full-width-table {
+    width: 100%;
+    table-layout: fixed; /* Força a tabela a ocupar 100% da largura */
+}
+
+.full-width-table th,
+.full-width-table td {
+    overflow: hidden; /* Oculta o conteúdo que ultrapassar a largura da célula */
+    text-overflow: ellipsis; /* Adiciona reticências para o texto que não cabe */
+}
+
+/* Estilos para a tabela de Gestão de Pessoas */
+.metas-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.metas-table thead {
+    background-color: #343a40;
+}
+
+.metas-table th {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    border-bottom: 2px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.metas-table td {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.metas-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.metas-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Estilos para a navbar de abas */
+.custom-nav-tabs .nav-link {
+    background-color: #f8f9fa; /* Cor de fundo clara para as abas */
+    color: #555; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 500; /* Negrito leve */
+    padding: 12px 20px; /* Espaçamento interno das abas */
+    border-radius: 4px 4px 0 0; /* Arredondamento das abas */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-nav-tabs .nav-link:hover {
+    background-color: #e9ecef; /* Cor de fundo ao passar o mouse */
+    color: #333; /* Cor do texto ao passar o mouse */
+}
+
+.custom-nav-tabs .nav-link.active {
+    background-color: #12E19F !important; /* Cor de fundo para a aba ativa */
+    color: #fff !important; /* Cor do texto para a aba ativa */
+    border-color: #12E19F !important; /* Borda da aba ativa */
+}
+
+.custom-nav-tabs {
+    border-bottom: 2px solid #dee2e6; /* Linha inferior para separar as abas do conteúdo */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .metas-table {
+        font-size: 12px;
+    }
+
+    .metas-table th,
+    .metas-table td {
+        padding: 8px 10px;
+    }
+
+    .custom-nav-tabs .nav-link {
+        font-size: 14px; /* Reduz tamanho da fonte em telas pequenas */
+        padding: 10px 15px; /* Reduz espaçamento interno */
+    }
+}
+
+.navbar {
+    background-color: #000000; /* Navbar preta */
+    padding: 0 40px; /* Aumenta o padding para afastar os botões e conteúdo das bordas */
+    width: 100%; /* Faz a navbar ocupar toda a largura da tela */
+    display: flex;
+    justify-content: space-between; /* Logo no lado esquerdo e botões no lado direito */
+    align-items: center; /* Centraliza verticalmente os itens da navbar */
+    position: relative; /* Necessário para o controle do posicionamento relativo dos filhos */
+    z-index: 1; /* Garante que a navbar fique abaixo do logo */
+    height: 80px; /* Altura da navbar reduzida */
+    overflow: visible;
+}
+
+.navbar-brand img {
+    height: 150px; /* Tamanho grande para o logo */
+    position: absolute;
+    top: -35px; /* Faz o logo se sobrepor à navbar */
+    z-index: 1000; /* Garante que o logo fique acima da navbar */
+}
+
+.btn-dropdown {
+    background-color: #12E19F !important; /* Cor dos botões na navbar */
+    color: #ffffff !important; /* Texto branco */
+    border: none;
+    padding: 8px 16px;
+    margin-left: -5px; /* Afasta os botões uns dos outros */
+    margin-right: 20px; /* Afasta os botões do canto direito */
+    font-weight: bold;
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para efeito de profundidade */
+    text-align: center;
+}
+
+.dropdown-item {
+    color: #000000; /* Preto para o item de dropdown */
+    font-size: medium;
+    text-align: center;
+}
+
+.nav-item .dropdown-menu {
+    position: absolute;
+    z-index: 1050; 
+    padding: 5px 5px 5px 5px;
+    transform: translateX(-50%); /* Centraliza o dropdown em relação ao botão */
+    left: 50%; /* Garante que o dropdown seja centralizado com o botão */
+    min-width: 200px; /* Largura mínima do dropdown para garantir boa exibição */
+    text-align: center;
+}
+
+.card-div {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    margin-top: 5px;
+    margin-left: 500px;
+    text-align: center;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para os filtros */
+.filter-div {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 0 auto; /* Centraliza o container */
+    width: 80%; /* Ajusta a largura para 80% da tela */
+    max-width: 800px; /* Limita a largura máxima */
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Centralizar os filtros e o botão dentro da .filter-div */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte em telas pequenas */
+    justify-content: center; /* Alinha os itens horizontalmente no centro */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Estilo dos filtros */
+.div-filter {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Largura fixa para os dropdowns */
+    text-align: center;
+}
+
+/* Estilo dos labels */
+.div-filter label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo dos selects */
+.div-filter select {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border 0.3s ease;
+    text-align: center;
+}
+
+.div-filter select:focus {
+    border-color: #12E19F; /* Cor de borda verde ao focar no dropdown */
+    outline: none;
+}
+
+/* Botão Exibir */
+.btn-primary {
+    background-color: #12E19F !important; /* Cor verde para o botão */
+    border-color: #12E19F !important;
+    color: white !important;
+    padding: 10px 60px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: auto; /* Ajusta a largura do botão */
+    margin-top: 20px;
+    margin-left: 85px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0baa78 !important; /* Cor ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filter-div {
+        width: 90%;
+    }
+
+    .div-filter select {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+        padding: 8px 30px; /* Ajusta o padding do botão em telas pequenas */
+    }
+}

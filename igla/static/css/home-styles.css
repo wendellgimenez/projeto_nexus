@@ -1,0 +1,215 @@
+html, body {
+    height: 100%; /* Garante que o body ocupe 100% da altura da página */
+}
+
+body {
+    display: flex; /* Exibe os elementos em linha */
+    flex-direction: column; /* Organiza os elementos em colunas */
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    font-family: Arial, sans-serif; /* Define a fonte padrão como Arial ou uma fonte sem serifa */
+    background-color: #ffffff; /* Cor de fundo branca */
+    color: #000000; /* Cor do texto como preto */
+}
+
+.container {
+    flex: 1; /* Ocupa o restante da altura disponível */
+}
+
+.navbar {
+    background-color: #000000; /* Define a cor de fundo da navbar como preta */
+    padding: 0 40px; /* Define o preenchimento para afastar conteúdo das bordas */
+    width: 100%; /* Faz a navbar ocupar toda a largura da tela */
+    display: flex; /* Exibe os itens em linha */
+    justify-content: space-between; /* Alinha os itens com espaço entre eles */
+    align-items: center; /* Centraliza os itens verticalmente */
+    position: relative; /* Configura o posicionamento relativo para controle dos elementos filhos */
+    z-index: 2; /* Define a ordem de empilhamento para ficar abaixo do logo */
+    height: 80px; /* Define a altura da navbar */
+    overflow: visible; /* Permite que o logo se estenda além da navbar */
+}
+
+.navbar-brand img {
+    height: 150px; /* Tamanho maior para o logo */
+    position: absolute; /* Posiciona o logo de forma absoluta */
+    top: -35px; /* Move o logo para que fique sobreposto à navbar */
+    z-index: 1000; /* Garante que o logo esteja acima de outros elementos */
+}
+
+.btn-dropdown {
+    background-color: #12E19F; /* Cor do fundo dos botões */
+    color: #ffffff; /* Cor do texto dos botões como branco */
+    border: none; /* Remove a borda padrão dos botões */
+    padding: 8px 16px; /* Define o preenchimento interno do botão */
+    margin-left: -5px; /* Ajusta a margem à esquerda para espaçamento entre botões */
+    margin-right: 20px; /* Ajusta a margem à direita para distanciar do canto */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+    border-radius: 10px; /* Arredonda as bordas do botão */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    text-align: center; /* Centraliza o texto */
+}
+
+.dropdown-item {
+    color: #000000; /* Define a cor do texto como preto */
+    font-size: medium; /* Define o tamanho da fonte médio */
+    text-align: center; /* Centraliza o texto */
+}
+
+.nav-item .dropdown-menu {
+    position: absolute; /* Posiciona o menu de dropdown de forma absoluta */
+    z-index: 1050; /* Define a ordem de empilhamento para ficar acima dos outros elementos */
+    padding: 5px 5px 5px 5px; /* Define o preenchimento interno do dropdown */
+    transform: translateX(-50%); /* Centraliza o menu dropdown em relação ao botão */
+    left: 50%; /* Move o menu dropdown para a metade da largura do botão */
+    min-width: 200px; /* Define a largura mínima do menu dropdown */
+    text-align: center; /* Centraliza o texto do menu dropdown */
+}
+
+.home-content {
+    display: flex; /* Exibe o conteúdo em uma estrutura flexível */
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    padding-top: 20px;  /* Adicionado padding-top para compensar a navbar fixa */
+    padding-bottom: 40px;  /* Adicionado padding-bottom para espaço no final */
+    max-width: 1200px;  /* Limitando a largura máxima do conteúdo */
+    margin: 0 auto;  /* Centralizando o conteúdo */
+}
+
+h1 {
+    font-size: 2.5em; /* Define o tamanho da fonte do título */
+    margin-bottom: 5px; /* Espaçamento inferior */
+    color: #000000; /* Cor do texto como preto */
+    text-align: center;  /* Garantindo alinhamento central */
+}
+
+p {
+    font-size: 1.2em; /* Define o tamanho da fonte */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    color: #666666; /* Cor do texto em cinza claro */
+}
+
+.section-title {
+    font-size: 1.3em; /* Tamanho da fonte da seção */
+    font-style: italic; /* Define a fonte como itálico */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    margin-left: -750px; /* Move a seção para a esquerda */
+    color: #000000; /* Cor do texto como preto */
+}
+
+.card {
+    border: none; /* Remove a borda */
+    border-radius: 30px; /* Arredonda as bordas da card */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para o efeito de profundidade */
+    transition: transform 0.3s ease; /* Adiciona animação suave ao transformar */
+    overflow: hidden; /* Oculta conteúdo que transborda */
+    margin-bottom: 30px; /* Espaçamento inferior da card */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Eleva a card ao passar o cursor */
+}
+
+.card-link {
+    text-decoration: none; /* Remove a decoração do link */
+    color: inherit; /* Mantém a cor do link igual à cor do texto */
+    display: block; /* Exibe o link como um bloco */
+}
+
+.card-img-top {
+    border-radius: 10px; /* Arredonda as bordas da imagem */
+    width: 100%; /* Faz a imagem ocupar toda a largura da card */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.card-body {
+    display: none; /* Oculta o corpo da card */
+}
+
+.footer {
+    background-color: #f2f2f2;
+    color: #666666;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+/* Estilo para a fita de atualização */
+#market-ticker {
+    width: 100%;                    /* Fita ocupa 100% da largura da tela */
+    top: 80px;                      /* Alinha ao topo da página */
+    left: 0;                        /* Alinha à esquerda da página */
+    position: absolute !important;     /* Fixa a fita na parte superior */
+    overflow: hidden;               /* Garante que o conteúdo excedente não apareça */
+    white-space: nowrap;            /* Evita quebra de linha */
+    background-color: #242323;      /* Fundo preto */
+    padding: 1px 0;
+    font-size: 1em;
+    z-index: 0;                  /* Garante que a fita fique no topo, acima de outros elementos */
+}
+
+/* Conteúdo da fita de atualização */
+#market-ticker .ticker-content {
+    visibility: hidden; /* Inicialmente invisível */
+    display: inline-block;
+    animation: scroll 60s linear infinite;
+}
+
+/* Após o conteúdo ser carregado e animado, se torna visível */
+#market-ticker .ticker-content.show {
+    visibility: visible;
+}
+
+/* Estilos para os itens da fita */
+#market-ticker span {
+    display: inline-block;
+    margin-right: 30px;              /* Espaço entre os itens */
+    font-weight: bold;
+}
+
+/* Adicionar estilo para o valor neutro (igual ao último) */
+#market-ticker span.neutral {
+    color: #00bfff; /* Azul claro */
+}
+
+/* Estilos para os itens da fita */
+#market-ticker span.up {
+    color: #0f0;  /* Verde se subiu */
+}
+
+#market-ticker span.down {
+    color: #f00;  /* Vermelho se desceu */
+}
+
+/* Animação de rolagem */
+@keyframes scroll {
+    from { transform: translateX(0); }   /* Começa no início da fita */
+    to { transform: translateX(-50%); } /* Termina no meio da fita, fazendo a repetição */
+}
+
+/* Garantir que o conteúdo seja duplicado sem espaço em branco */
+#market-ticker .ticker-content {
+    display: inline-block;
+    white-space: nowrap;   /* Evita quebra de linha */
+}
+
+#market-ticker .ticker-content span {
+    display: inline-block;
+    margin-right: 30px; /* Espaço entre os itens */
+}
+
+#market-ticker .ticker-content {
+    animation: scroll 60s linear infinite;
+}
+
+#market-ticker .ticker-content-duplicate {
+    display: inline-block;
+    margin-left: 100%;
+    animation: scroll 60s linear infinite;
+}
+
+.up { color: #00ff00; }    /* ou verde de sua preferência */
+.down { color: #ff0000; }  /* ou vermelho de sua preferência */
+.neutral { color: #ffffff; } /* ou cor neutra de sua preferência */

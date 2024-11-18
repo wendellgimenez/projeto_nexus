@@ -1,0 +1,76 @@
+/* register-styles.css */
+
+body {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    font-family: Arial, sans-serif; /* Fonte moderna */
+}
+
+.container {
+    background-color: #fff; /* Fundo branco para o formulário */
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 600px; /* Largura máxima do container */
+    margin: auto; /* Centraliza o formulário */
+}
+
+h2 {
+    color: #333; /* Cor do título */
+    text-align: center; /* Centraliza o título */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Espaçamento entre os campos */
+}
+
+.form-label {
+    font-weight: bold; /* Negrito para os labels */
+    margin-bottom: 0.5rem; /* Espaçamento abaixo dos labels */
+    display: block; /* Garante que o label ocupe uma linha inteira */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Largura total do campo */
+    padding: 0.75rem; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #12E19F; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.btn-primary {
+    background-color: #12E19F; /* Cor do botão */
+    border: none; /* Sem borda */
+    padding: 0.75rem 1.5rem; /* Espaçamento interno do botão */
+    font-size: 1rem; /* Tamanho da fonte do botão */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.btn-primary:hover {
+    background-color: #067c57; /* Cor do botão ao passar o mouse */
+}
+
+.table {
+    margin-top: 2rem; /* Espaçamento acima da tabela */
+}
+
+.table th {
+    background-color: #12E19F; /* Cor de fundo para cabeçalho da tabela */
+    color: white; /* Cor do texto no cabeçalho */
+    padding: 0.75rem; /* Espaçamento interno do cabeçalho */
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse sobre as linhas da tabela */
+}

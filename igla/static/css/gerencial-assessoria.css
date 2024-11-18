@@ -1,0 +1,536 @@
+/* Estilos do Modal */
+
+/* Define a largura máxima para diálogos modais grandes */
+.modal-dialog.modal-lg {
+    max-width: 800px; /* Largura máxima de 800 pixels */
+}
+
+/* Estilos gerais para o conteúdo do modal */
+.modal-content {
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+}
+
+/* Estilos para o cabeçalho do modal */
+.modal-header {
+    background-color: #12E19F; /* Cor de fundo verde-claro */
+    color: white; /* Cor do texto em branco */
+    border-bottom: none; /* Remove a borda inferior */
+    border-radius: 8px 8px 0 0; /* Bordas arredondadas no topo */
+    padding: 20px; /* Preenchimento interno de 20 pixels */
+}
+
+/* Estilo para o título do modal */
+.modal-title {
+    font-weight: bold; /* Título em negrito */
+}
+
+/* Estilos para o corpo do modal */
+.modal-body {
+    padding: 30px; /* Preenchimento interno de 30 pixels */
+}
+
+/* Estilos para o rodapé do modal */
+.modal-footer {
+    border-top: none; /* Remove a borda superior */
+    padding: 20px; /* Preenchimento interno de 20 pixels */
+}
+
+/* Estilos para rótulos de formulários */
+.form-label {
+    font-weight: 600; /* Peso da fonte ajustado para 600 (semi-negrito) */
+    color: #333; /* Cor do texto um cinza escuro */
+    margin-bottom: 0.5rem; /* Margem inferior de 0.5 rem */
+}
+
+/* Estilos para seletores e campos de entrada */
+.form-select,
+.form-control {
+    border-radius: 4px; /* Bordas arredondadas */
+    border: 1px solid #ced4da; /* Borda cinza-clara */
+    padding: 10px; /* Preenchimento interno de 10 pixels */
+    font-size: 14px; /* Tamanho da fonte definido para 14 pixels */
+}
+
+/* Ajusta o grupo de entradas para um campo de texto específico */
+.input-group .form-control {
+    width: 100px; /* Largura fixa de 100 pixels */
+    border-right: none; /* Remove a borda direita */
+}
+
+/* Estilos para o seletor em um grupo de entradas */
+.input-group .form-select {
+    border-left: none; /* Remove a borda esquerda */
+    background-color: #f8f9fa; /* Cor de fundo cinza claro */
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+    .modal-dialog.modal-lg {
+        max-width: 95%; /* Largura máxima de 95% em telas pequenas */
+        margin: 20px auto; /* Margem automática em 20 pixels */
+    }
+
+    .modal-body {
+        padding: 20px; /* Preenchimento reduzido no corpo do modal */
+    }
+}
+
+/* Estilos para o botão de Pesquisar e Adicionar Linha */
+.btn-primary,
+.btn-primary:focus {
+    background-color: #12E19F !important; /* Cor de fundo verde-claro */
+    border-color: #12E19F !important; /* Cor da borda verde-claro */
+    color: white !important; /* Cor do texto em branco */
+}
+
+/* Estilo para o botão primário ao passar o mouse */
+.btn-primary:hover {
+    background-color: #0a815c !important; /* Cor de fundo mais escura ao passar o mouse */
+    border-color: #0a815c !important; /* Cor da borda mais escura ao passar o mouse */
+    color: white !important; /* Cor do texto em branco */
+}
+
+/* Estilos para o botão Editar na coluna Ações */
+.btn-editar,
+.btn-editar:focus {
+    background-color: #12E19F !important; /* Cor de fundo verde-claro */
+    border-color: #12E19F !important; /* Cor da borda verde-claro */
+    color: white !important; /* Cor do texto em branco */
+}
+
+/* Estilo para o botão Editar ao passar o mouse */
+.btn-editar:hover {
+    background-color: #0a815c !important; /* Cor de fundo mais escura ao passar o mouse */
+    border-color: #0a815c !important; /* Cor da borda mais escura ao passar o mouse */
+    color: white !important; /* Cor do texto em branco */
+}
+
+/* Estilos para outros botões de sucesso que podem ser ajustados */
+.btn-success,
+.btn-success:focus {
+    background-color: #12E19F !important; /* Cor de fundo verde-claro */
+    border-color: #12E19F !important; /* Cor da borda verde-claro */
+    color: white !important; /* Cor do texto em branco */
+}
+
+/* Estilo para o botão de sucesso ao passar o mouse */
+.btn-success:hover {
+    background-color: #0a815c !important; /* Cor de fundo mais escura ao passar o mouse */
+    border-color: #0a815c !important; /* Cor da borda mais escura ao passar o mouse */
+    color: white !important; /* Cor do texto em branco */
+}
+
+/* Estilos para o Contêiner da Tabela */
+.table-container {
+    margin: 0 5px; /* Espaçamento de 5px das bordas esquerda e direita */
+}
+
+/* Estilos para tabelas responsivas */
+.table-responsive {
+    width: 117%; /* Define a largura da tabela como 117% do contêiner pai */
+    margin: 0 -100px; /* Ajusta a margem horizontal para centralizar a tabela */
+    overflow-x: hidden; /* Oculta o scroll horizontal */
+}
+
+/* Estilos para tabelas de largura total */
+.full-width-table {
+    width: calc(100% - 10px); /* Ajusta a largura da tabela para compensar a margem */
+    table-layout: fixed; /* Força a tabela a ocupar 100% da largura disponível */
+}
+
+/* Estilos para cabeçalhos e células da tabela de largura total */
+.full-width-table th,
+.full-width-table td {
+    overflow: hidden; /* Oculta o conteúdo que ultrapassar a largura da célula */
+    text-overflow: ellipsis; /* Adiciona reticências para o texto que não cabe */
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto; /* Adiciona scroll horizontal em telas menores */
+    }
+}
+
+/* Estilos para o cabeçalho da tabela */
+thead th {
+    vertical-align: top; /* Alinha o conteúdo do cabeçalho ao topo */
+    padding-bottom: 15px; /* Adiciona espaço abaixo do cabeçalho */
+}
+
+/* Estilos para grupos de formulários no cabeçalho */
+thead .form-group {
+    margin-top: 5px; /* Margem superior de 5 pixels para grupos de formulários */
+}
+
+/* Estilos para seletores no cabeçalho da tabela */
+thead select.form-control {
+    width: 100%; /* Largura total para seletores */
+    padding: 2px 5px; /* Preenchimento interno dos seletores */
+    height: auto; /* Altura automática */
+}
+
+/* Ajustes para garantir alinhamento adequado dos elementos */
+.d-flex .form-control {
+    margin-right: 10px; /* Margem à direita dos campos de entrada */
+}
+
+.d-flex .btn {
+    margin-left: 10px; /* Margem à esquerda dos botões */
+}
+
+
+/* Estilos para a tabela Matriz de Receitas */
+.matriz-receitas-table {
+    width: 100%; /* Largura total para a tabela */
+    border-collapse: separate; /* Permite espaçamento entre as células */
+    border-spacing: 0; /* Remove espaçamento padrão entre as células */
+    border: 1px solid #e0e0e0; /* Borda cinza-clara ao redor da tabela */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapassar o contêiner */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave para a tabela */
+}
+
+/* Estilos para o cabeçalho da tabela Matriz de Receitas */
+.matriz-receitas-table thead {
+    background-color: #343a40; /* Cor de fundo escura para o cabeçalho */
+}
+
+/* Estilos para cabeçalhos da tabela Matriz de Receitas */
+.matriz-receitas-table th {
+    padding: 12px 15px; /* Preenchimento interno dos cabeçalhos */
+    text-align: center; /* Centraliza o texto no cabeçalho */
+    font-weight: 600; /* Define o peso da fonte como semi-negrito */
+    font-size: 14px; /* Tamanho da fonte do cabeçalho */
+    color: #fff; /* Cor do texto em branco */
+    border-bottom: 2px solid #dee2e6; /* Borda inferior clara */
+    vertical-align: middle; /* Alinha verticalmente ao centro */
+}
+
+/* Estilos para células da tabela Matriz de Receitas */
+.matriz-receitas-table td {
+    padding: 10px 15px; /* Preenchimento interno das células */
+    font-size: 14px; /* Tamanho da fonte das células */
+    color: #555; /* Cor do texto das células em cinza escuro */
+    border-bottom: 1px solid #e0e0e0; /* Borda inferior clara para as células */
+    text-align: center; 
+}
+
+/* Remove a borda inferior da última linha da tabela */
+.matriz-receitas-table tbody tr:last-child td {
+    border-bottom: none; /* Remove a borda inferior da última linha */
+}
+
+/* Estilo de destaque para a linha da tabela ao passar o mouse */
+.matriz-receitas-table tbody tr:hover {
+    background-color: #f5f5f5; /* Cor de fundo cinza claro ao passar o mouse */
+}
+
+/* Estilos para campos de entrada na tabela Matriz de Receitas */
+.matriz-receitas-table .form-control {
+    font-size: 14px; /* Tamanho da fonte para campos de entrada */
+    padding: 6px 10px; /* Preenchimento interno dos campos de entrada */
+    border-radius: 4px; /* Bordas arredondadas para campos de entrada */
+    text-align: center; /* Centraliza o texto nos campos de entrada */
+}
+
+/* Estilos para grupos de botões na tabela Matriz de Receitas */
+.matriz-receitas-table .btn-group {
+    display: flex; /* Utiliza flexbox para alinhamento */
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+    align-items: center; /* Centraliza verticalmente os botões */
+}
+
+/* Estilos para botões dentro do grupo de botões na tabela */
+.matriz-receitas-table .btn-group .btn {
+    margin-right: 5px; /* Margem à direita dos botões */
+    font-size: 12px; /* Tamanho da fonte dos botões */
+    padding: 4px 8px; /* Preenchimento interno dos botões */
+}
+
+/* Responsividade para a tabela Matriz de Receitas */
+@media (max-width: 768px) {
+    .matriz-receitas-table {
+        font-size: 12px; /* Reduz o tamanho da fonte para 12px em telas menores */
+    }
+    
+    .matriz-receitas-table th,
+    .matriz-receitas-table td {
+        padding: 8px 10px; /* Reduz o preenchimento das células para 8px em cima/baixo e 10px em lados */
+    }
+}
+
+/* Estilos para a navegação de paginação */
+.pagination {
+    margin-top: 20px; /* Adiciona espaço superior de 20px para a navegação */
+}
+
+/* Estilos para os links da paginação */
+.pagination .page-item .page-link {
+    color: #12E19F; /* Cor dos links */
+    border: 1px solid #dee2e6; /* Borda dos links */
+    padding: 10px 15px; /* Espaçamento interno dos links */
+    border-radius: 4px; /* Arredondamento dos links */
+    margin: 0 5px; /* Espaçamento horizontal entre os links */
+    font-size: 14px; /* Tamanho da fonte dos links */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* Estilo para os links da paginação ao passar o mouse */
+.pagination .page-item .page-link:hover {
+    background-color: #0a815c; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+    border-color: #0a815c; /* Cor da borda ao passar o mouse */
+}
+
+/* Estilos para links da paginação que estão desabilitados */
+.pagination .page-item.disabled .page-link {
+    color: #6c757d; /* Cor do texto para links desabilitados */
+    background-color: #e9ecef; /* Fundo da página atual */
+    border-color: #dee2e6; /* Cor da borda para links desabilitados */
+}
+
+/* Estilos para o link da página ativa na paginação */
+.pagination .page-item.active .page-link {
+    background-color: #12E19F; /* Cor de fundo da página ativa */
+    border-color: #12E19F; /* Cor da borda da página ativa */
+    color: white; /* Cor do texto da página ativa */
+}
+
+/* Estilos para a navbar de abas personalizadas */
+.custom-nav-tabs .nav-link {
+    background-color: #f8f9fa; /* Cor de fundo clara para as abas */
+    color: #555; /* Cor do texto das abas */
+    font-size: 16px; /* Tamanho da fonte das abas */
+    font-weight: 500; /* Negrito leve para as abas */
+    padding: 12px 20px; /* Preenchimento interno das abas */
+    border-radius: 4px 4px 0 0; /* Arredondamento nas bordas superiores das abas */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para fundo e cor do texto */
+}
+
+/* Estilo para as abas ao passar o mouse */
+.custom-nav-tabs .nav-link:hover {
+    background-color: #e9ecef; /* Cor de fundo ao passar o mouse sobre as abas */
+    color: #333; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo para a aba ativa */
+.custom-nav-tabs .nav-link.active {
+    background-color: #12E19F !important; /* Cor de fundo para a aba ativa */
+    color: #fff !important; /* Cor do texto para a aba ativa */
+    border-color: #12E19F !important; /* Borda da aba ativa */
+}
+
+/* Estilo para separar as abas do conteúdo */
+.custom-nav-tabs {
+    border-bottom: 2px solid #dee2e6; /* Linha inferior para separar as abas do conteúdo */
+    margin-bottom: 20px; /* Adiciona espaço inferior entre as abas e o conteúdo */
+}
+
+/* Responsividade para as abas em telas menores */
+@media (max-width: 768px) {
+    .custom-nav-tabs .nav-link {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas pequenas */
+        padding: 10px 15px; /* Reduz o preenchimento interno das abas */
+    }
+}
+
+/* Estilo básico para html e body */
+html, body {
+    height: 100%; /* Define a altura total da página como 100% da viewport */
+    margin: 0; /* Remove margens padrão do body */
+    padding: 0; /* Remove preenchimento padrão do body */
+}
+
+/* Estilos do body */
+body {
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da viewport */
+}
+
+/* Container principal */
+.container {
+    flex: 1 0 auto; /* Permite que o container cresça para preencher o espaço restante */
+    width: 100%; /* Define a largura total do container */
+    max-width: none; /* Remove qualquer limite de largura máximo */
+    padding-right: 15px; /* Adiciona preenchimento à direita */
+    padding-left: 15px; /* Adiciona preenchimento à esquerda */
+    margin-right: auto; /* Centraliza o container horizontalmente */
+    margin-left: auto; /* Centraliza o container horizontalmente */
+}
+
+/* Estilos para o rodapé */
+.footer {
+    flex-shrink: 0; /* Impede que o rodapé encolha */
+    background-color: #f2f2f2; /* Cor de fundo do rodapé */
+    color: #666666; /* Cor do texto do rodapé */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Preenchimento vertical do rodapé */
+    width: 100%; /* Faz o rodapé ocupar toda a largura da tela */
+    font-size: 0.9em; /* Tamanho da fonte do rodapé */
+}
+
+/* Ajustes para a tabela responsiva */
+.table-responsive {
+    width: 100%; /* Define a largura total da tabela */
+    margin: 0; /* Remove margens */
+    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+}
+
+/* Estilos para a tabela de largura total */
+.full-width-table {
+    width: 100%; /* Define a largura total da tabela */
+    table-layout: auto; /* Ajusta automaticamente a largura das colunas */
+}
+
+/* Estilos da navbar */
+.navbar {
+    background-color: #000000; /* Cor de fundo preta para a navbar */
+    padding: 0 40px; /* Preenchimento lateral para afastar conteúdo das bordas */
+    width: 100%; /* Faz a navbar ocupar toda a largura da tela */
+    display: flex; /* Usa flexbox para layout da navbar */
+    justify-content: space-between; /* Distribui espaço entre logo e botões */
+    align-items: center; /* Centraliza verticalmente os itens da navbar */
+    position: relative; /* Controla o posicionamento relativo dos filhos */
+    z-index: 1; /* Define a ordem de empilhamento para que a navbar fique acima de outros elementos */
+    height: 80px; /* Altura da navbar */
+    overflow: visible; /* Permite que o conteúdo seja visível */
+}
+
+/* Estilo para a imagem do logo na navbar */
+.navbar-brand img {
+    height: 150px; /* Define a altura da imagem do logo */
+    position: absolute; /* Posiciona o logo de forma absoluta em relação à navbar */
+    top: -35px; /* Faz o logo se sobrepor à navbar */
+    z-index: 1000; /* Garante que o logo fique acima da navbar */
+}
+
+/* Estilos para os botões de dropdown na navbar */
+.btn-dropdown {
+    background-color: #12E19F !important; /* Cor de fundo dos botões na navbar */
+    color: #ffffff !important; /* Cor do texto dos botões */
+    border: none; /* Remove borda padrão */
+    padding: 8px 16px; /* Preenchimento interno dos botões */
+    margin-left: -5px; /* Ajusta margem à esquerda */
+    margin-right: 20px; /* Ajusta margem à direita */
+    font-weight: bold; /* Define o texto como negrito */
+    border-radius: 10px; /* Arredondamento das bordas do botão */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para efeito de profundidade */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos para os itens do dropdown */
+.dropdown-item {
+    color: #000000; /* Cor do texto dos itens de dropdown */
+    font-size: medium; /* Tamanho da fonte dos itens de dropdown */
+    text-align: center; /* Centraliza o texto dos itens de dropdown */
+}
+
+/* Estilos para o menu do dropdown */
+.nav-item .dropdown-menu {
+    position: absolute; /* Permite posicionamento absoluto do dropdown */
+    z-index: 1050; /* Define a ordem de empilhamento para o dropdown */
+    padding: 5px; /* Preenchimento interno do menu dropdown */
+    transform: translateX(-50%); /* Centraliza o dropdown em relação ao botão */
+    left: 50%; /* Garante que o dropdown seja centralizado com o botão */
+    min-width: 200px; /* Largura mínima do dropdown */
+    text-align: center; /* Centraliza o texto do dropdown */
+}
+
+/* Estilos para o seletor de filtro de período */
+.filtro-periodo-select {
+    width: auto; /* Define largura automática */
+    min-width: 120px; /* Largura mínima do seletor */
+    max-width: 200px; /* Largura máxima do seletor */
+    text-align: center; /* Centraliza o texto do seletor */
+}
+
+/* Estilos base para todos os botões de ações */
+.btn-group .btn,
+.btn-editar-btn-escritorio,
+.btn-salvar-btn-escritorio,
+.btn-cancelar-btn-escritorio,
+.btn-excluir-btn-escritorio {
+    font-size: 12px; /* Tamanho da fonte dos botões */
+    padding: 4px 8px; /* Preenchimento interno dos botões */
+    margin-right: 5px; /* Margem à direita para espaçamento entre botões */
+    border-radius: 4px; /* Arredondamento das bordas dos botões */
+}
+
+/* Botão Editar */
+.btn-warning.editar-btn,
+.btn-warning.editar-btn-escritorio {
+    background-color: #12E19F !important; /* Cor de fundo do botão Editar */
+    border-color: #12E19F !important; /* Cor da borda do botão Editar */
+    color: white !important; /* Cor do texto do botão Editar */
+}
+
+/* Efeitos de hover para o botão Editar */
+.btn-warning.editar-btn:hover,
+.btn-warning.editar-btn-escritorio:hover {
+    background-color: #0a815c !important; /* Cor de fundo ao passar o mouse */
+    border-color: #0a815c !important; /* Cor da borda ao passar o mouse */
+    color: white !important; /* Mantém a cor do texto ao passar o mouse */
+}
+
+/* Botão Salvar */
+.btn-success.salvar-btn,
+.btn-success.salvar-btn-escritorio {
+    background-color: #12E19F !important; /* Cor de fundo do botão Salvar */
+    border-color: #12E19F !important; /* Cor da borda do botão Salvar */
+    color: white !important; /* Cor do texto do botão Salvar */
+}
+
+/* Efeitos de hover para o botão Salvar */
+.btn-success.salvar-btn:hover,
+.btn-success.salvar-btn-escritorio:hover {
+    background-color: #0a815c !important; /* Cor de fundo ao passar o mouse */
+    border-color: #0a815c !important; /* Cor da borda ao passar o mouse */
+    color: white !important; /* Mantém a cor do texto ao passar o mouse */
+}
+
+/* Botão Cancelar */
+.btn-secondary.cancelar-btn,
+.btn-secondary.cancelar-btn-escritorio {
+    background-color: #6c757d !important; /* Cor de fundo do botão Cancelar */
+    border-color: #6c757d !important; /* Cor da borda do botão Cancelar */
+    color: white !important; /* Cor do texto do botão Cancelar */
+}
+
+/* Efeitos de hover para o botão Cancelar */
+.btn-secondary.cancelar-btn:hover,
+.btn-secondary.cancelar-btn-escritorio:hover {
+    background-color: #5a6268 !important; /* Cor de fundo ao passar o mouse */
+    border-color: #545b62 !important; /* Cor da borda ao passar o mouse */
+    color: white !important; /* Mantém a cor do texto ao passar o mouse */
+}
+
+/* Botão Excluir */
+.btn-danger.excluir-btn,
+.btn-danger.excluir-btn-escritorio {
+    background-color: #dc3545 !important; /* Cor de fundo do botão Excluir */
+    border-color: #dc3545 !important; /* Cor da borda do botão Excluir */
+    color: white !important; /* Cor do texto do botão Excluir */
+}
+
+/* Efeitos de hover para o botão Excluir */
+.btn-danger.excluir-btn:hover,
+.btn-danger.excluir-btn-escritorio:hover {
+    background-color: #c82333 !important; /* Cor de fundo ao passar o mouse */
+    border-color: #bd2130 !important; /* Cor da borda ao passar o mouse */
+    color: white !important; /* Mantém a cor do texto ao passar o mouse */
+}
+
+/* Classe para esconder botões */
+.d-none {
+    display: none !important; /* Oculta o elemento ao aplicar esta classe */
+}
+
+/* Ajuste do grupo de botões */
+td .btn-group,
+td .btn {
+    display: inline-flex; /* Exibe botões em linha usando flexbox */
+    align-items: center; /* Centraliza verticalmente os itens do grupo de botões */
+}
