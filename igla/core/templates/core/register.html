@@ -1,0 +1,105 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/register-styles.css' %}">
+{% endblock %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Registrar Novo Usuário</h2>
+    <form method="post" class="form-register">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name-select" class="form-label">Nome</label>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="email-field" class="form-label">E-mail</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label for="department-field" class="form-label">Departamento</label>
+            {{ form.department }}
+        </div>
+        <div class="form-group">
+            <label for="user_level" class="form-label">Nível de Usuário</label>
+            {{ form.user_level }}
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+
+    <div class="mt-4">
+        <h3>Legenda dos Níveis de Usuário</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nível de Usuário</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Master</td>
+                    <td>Acesso total ao sistema</td>
+                </tr>
+                <tr>
+                    <td>Gerencial</td>
+                    <td>Criação de Usuários + Edição no departamento</td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Apenas edição no departamento</td>
+                </tr>
+                <tr>
+                    <td>Visualizador</td>
+                    <td>Somente visualização</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var nameSelect = document.getElementById('name-select');
+        
+        // Ordenar as opções em ordem alfabética
+        var options = Array.from(nameSelect.options);
+        options.sort((a, b) => a.text.localeCompare(b.text));
+        options.forEach(option => nameSelect.appendChild(option));
+
+        nameSelect.addEventListener('change', function() {
+            var selectedName = this.value;
+            if (selectedName && selectedName !== 'Selecione um Usuário') {
+                fetch('{% url "get_email_by_name" %}?name=' + encodeURIComponent(selectedName))
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Resposta do servidor (email):", data);
+                        document.getElementById('email-field').value = data.email || '';
+                    })
+                    .catch(error => {
+                        console.error("Erro ao buscar o e-mail:", error);
+                    });
+
+                fetch('{% url "get_department_by_name" %}?name=' + encodeURIComponent(selectedName))
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Resposta do servidor (departamento):", data);
+                        document.getElementById('department-field').value = data.department || '';
+                    })
+                    .catch(error => {
+                        console.error("Erro ao buscar o departamento:", error);
+                    });
+            } else {
+                document.getElementById('email-field').value = '';
+                document.getElementById('department-field').value = '';
+            }
+        });
+    });
+</script>
+{% endblock %}

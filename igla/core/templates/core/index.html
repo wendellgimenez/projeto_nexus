@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/nexus-styles.css' %}">
+{% endblock %}
+
+{% block title %}Nexus Liberta{% endblock %}
+
+{% block content %}
+<div class="nexus-container">
+    <img src="{% static 'images/nexus-logo.png' %}" alt="Nexus Liberta Logo" class="nexus-logo">
+    <p class="nexus-tagline">Nexus, conectando áreas!</p>
+    <a href="{% url 'social:begin' 'azuread-tenant-oauth2' %}?prompt=login" class="nexus-button">ENTRAR</a>
+</div>
+<footer>
+    <div>
+        <p class="nexus-copyright">&copy; 2024 Nexus Liberta. Todos os direitos reservados.</p>
+    </div>
+{% endblock %}

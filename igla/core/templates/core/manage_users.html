@@ -1,0 +1,163 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
+{% endblock %}
+
+{% block title %}Gerenciar Usuários{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4 text-center">Gerenciar Usuários</h1>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center" id="custom-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome de Usuário</th>
+                    <th>Email</th>
+                    <th>Data de Criação</th>
+                    <th>Nível do Usuário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.date_joined|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <form method="post" class="d-inline">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <select name="user_level" class="form-control form-control-sm d-inline w-auto">
+                                <option value="Master" {% if user.profile.user_level == 'Master' %}selected{% endif %}>Master</option>
+                                <option value="Gerencial" {% if user.profile.user_level == 'Gerencial' %}selected{% endif %}>Gerencial</option>
+                                <option value="Administrador" {% if user.profile.user_level == 'Administrador' %}selected{% endif %}>Administrador</option>
+                                <option value="Visualizador" {% if user.profile.user_level == 'Visualizador' %}selected{% endif %}>Visualizador</option>
+                            </select>
+                            <button type="submit" name="update_user_level" class="btn btn-warning btn-sm">Atualizar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" class="d-inline">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <button type="submit" name="delete_user" class="btn delete-button btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">Nenhum usuário encontrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    /* Estilo da tabela para se parecer com a tabela da imagem */
+    #custom-table {
+        background-color: #858585; /* Fundo escuro */
+        color: black; /* Texto branco */
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #custom-table th, #custom-table td {
+        border: 1px solid #333;
+        padding: 12px 15px;
+    }
+
+    #custom-table th {
+        background-color: #858585; /* Cabeçalhos com fundo mais escuro */
+        color: black;
+        font-weight: bold;
+    }
+
+    #custom-table td {
+        background-color: #d1d1d1;
+    }
+
+    #custom-table td select, 
+    #custom-table td button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 5px;
+    }
+
+    /* Estilo do botão de Atualizar (mantém a mesma cor verde) */
+    #custom-table td button {
+        background-color: #12E19F;
+        border-radius: 5px;
+    }
+
+    /* Forçando o estilo do botão de Excluir (vermelho) */
+    .delete-button {
+        background-color: #DC3545 !important; /* Vermelho */
+        border-radius: 5px;
+    }
+
+    #custom-table td select {
+        background-color: #444;
+        color: white;
+    }
+
+    /* Marcar itens específicos com ícones de check */
+    .checkmark {
+        color: #12E19F;
+        font-size: 20px;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    .container {
+        flex: 1 0 auto;
+        width: 100%;
+        max-width: none;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .footer {
+        flex-shrink: 0;
+        background-color: #f2f2f2;
+        color: #666666;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        font-size: 0.9em;
+    }
+    
+    /* Ajustes para a tabela */
+    .table-responsive {
+        width: 100%;
+        margin: 0;
+        overflow-x: auto;
+    }
+    
+    .full-width-table {
+        width: 100%;
+        table-layout: auto;
+    }
+</style>
+
+{% endblock %}

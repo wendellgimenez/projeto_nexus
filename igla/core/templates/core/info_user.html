@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Informações de Usuário{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/info-styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container user-info-container">
+    <div class="user-info-card">
+        <div class="user-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <h2 class="user-name">{{ user.username }}</h2>
+        <div class="user-details">
+            <p><i class="fas fa-envelope"></i> {{ user.email }}</p>
+            <p><i class="fas fa-briefcase"></i> {{ user.profile.department }}</p>
+            <p><i class="fas fa-user-tag"></i> {{ user.profile.user_level }}</p>
+        </div>
+        {% if user.profile.user_level == 'Master' or user.profile.user_level == 'Gerencial' %}
+        <div class="user-actions">
+            <a href="{% url 'register' %}" class="btn btn-primary">Cadastrar Usuário</a>
+            <a href="{% url 'manage_users' %}" class="btn btn-outline-primary">Gerenciar Usuários</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

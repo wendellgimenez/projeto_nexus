@@ -1,0 +1,104 @@
+{% extends 'core/base.html' %} <!-- Extende o template base da aplicação, herdando a estrutura e estilos básicos -->
+{% load static %} <!-- Carrega a biblioteca de tags 'static' do Django para o uso de arquivos estáticos -->
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home-styles.css' %}"> <!-- Inclui um arquivo CSS específico para estilização da página -->
+{% endblock %}
+
+{% block content %}
+<div id="market-ticker">
+    <div class="ticker-content">
+        <!-- Os dados serão carregados dinamicamente aqui pelo JavaScript -->
+    </div>
+</div>
+
+<div class="home-content">
+    <h1>Seja bem-vindo(a) ao Nexus</h1> <!-- Título de boas-vindas principal da página -->
+    <p>A Intranet Gerencial da Liberta Investimentos</p> <!-- Breve descrição do sistema -->
+
+    <h3 class="section-title">Acesse as nossas principais dashboards<hr></h3> <!-- Subtítulo para a seção de acesso aos dashboards de PowerBI -->
+
+    <div class="row"> <!-- Início de uma linha que conterá os cards para os relatórios PowerBI -->
+
+        <!-- Card para o relatório "BI Alocação/Produtos" -->
+        <div class="col-4">
+            <a href="https://alocacaoassessoria.liberta.com.vc" class="card-link" target="_blank"> <!-- Link para o relatório, abrindo em uma nova aba -->
+                <div class="card">
+                    <img src="{% static 'images/bi_alocprod.png' %}" class="card-img-top" alt="BI Alocação/Produtos"> <!-- Imagem do relatório -->
+                    <div class="card-body">
+                        <h5 class="card-title">BI Alicação/Produtos</h5> <!-- Título do card -->
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card para o relatório "BI Gerencial" -->
+        <div class="col-4">
+            <a href="https://gerencialassessoria.liberta.com.vc" class="card-link" target="_blank"> <!-- Link para o relatório, abrindo em uma nova aba -->
+                <div class="card">
+                    <img src="{% static 'images/bi_gerencial.png' %}" class="card-img-top" alt="BI Gerencial"> <!-- Imagem do relatório gerencial -->
+                    <div class="card-body">
+                        <h5 class="card-title">BI Gerencial</h5> <!-- Título do card -->
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card para o relatório "BI Hub" -->
+        <div class="col-4">
+            <a href="https://app.powerbi.com/groups/4b209a00-34a6-4cb6-a16c-3c986e3b253d/reports/65f3fac5-7fdf-4d89-af2e-bb8ba29ee927?ctid=10e45de1-ff46-4846-b7d4-a50b1701f2ca&pbi_source=linkShare" class="card-link" target="_blank"> <!-- Link para o relatório, abrindo em uma nova aba -->
+                <div class="card">
+                    <img src="{% static 'images/bi_hub.png' %}" class="card-img-top" alt="BI Hub"> <!-- Imagem do relatório Hub -->
+                    <div class="card-body">
+                        <h5 class="card-title">BI Hub</h5> <!-- Título do card -->
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Subtítulo para a seção de acesso às plataformas principais -->
+    <h3 class="section-title">Acesse as nossas principais plataformas<hr></h3>
+
+    <!-- Início de uma linha que conterá os cards para as plataformas -->
+    <div class="row">
+
+        <!-- Card para a plataforma "Hub Liberta" -->
+        <div class="col-4">
+            <a href="https://hubliberta.com.br/" class="card-link" target="_blank"> <!-- Link para a plataforma, abrindo em uma nova aba -->
+                <div class="card">
+                    <img src="{% static 'images/fundo-hub-liberta.png' %}" class="card-img-top" alt="Hub Liberta"> <!-- Imagem da plataforma Hub Liberta -->
+                    <div class="card-body">
+                        <h5 class="card-title">Hub Liberta</h5> <!-- Título do card -->
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card para a plataforma "Liberta XP" -->
+        <div class="col-4">
+            <a href="https://libertainvestimentos.com.br/" class="card-link" target="_blank"> <!-- Link para a plataforma, abrindo em uma nova aba -->
+                <div class="card">
+                    <img src="{% static 'images/fundo-liberta-xp.png' %}" class="card-img-top" alt="Liberta XP"> <!-- Imagem da plataforma Liberta XP -->
+                    <div class="card-body">
+                        <h5 class="card-title">Liberta XP</h5> <!-- Título do card -->
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card para a plataforma "Liberta Play" -->
+        <div class="col-4">
+            <a href="https://libertaplay.com.br/" class="card-link" target="_blank"> <!-- Link para a plataforma, abrindo em uma nova aba -->
+                <div class="card">
+                    <img src="{% static 'images/fundo-liberta-play.png' %}" class="card-img-top" alt="Liberta Play"> <!-- Imagem da plataforma Liberta Play -->
+                    <div class="card-body">
+                        <h5 class="card-title">Liberta Play</h5> <!-- Título do card -->
+                    </div>
+                </div>
+            </a>
+        </div> <!-- Fim da linha das plataformas principais -->
+    </div>
+</div>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %} <!-- Fim do bloco de conteúdo principal da página -->

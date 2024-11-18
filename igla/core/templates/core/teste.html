@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <select id="name-select">
+        <option value="Selecione um Usuário">Selecione um Usuário</option>
+        <option value="User1">User1</option>
+        <option value="User2">User2</option>
+    </select>
+    <input type="text" id="email-field" placeholder="E-mail">
+
+    <script>
+        $(document).ready(function() {
+            $('#name-select').change(function() {
+                var selectedName = $(this).val();
+                if (selectedName && selectedName !== 'Selecione um Usuário') {
+                    $('#email-field').val('test@example.com');  // Simula a resposta da API
+                } else {
+                    $('#email-field').val('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

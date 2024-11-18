@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %} <!-- Extende o template base, herdando a estrutura e estilos padrão da aplicação -->
+{% load static %} <!-- Carrega a biblioteca de tags 'static' do Django para uso de arquivos estáticos -->
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login-styles.css' %}"> <!-- Inclui o CSS específico para estilização da página de login -->
+{% endblock %}
+
+{% block title %}Login{% endblock %} <!-- Define o título da página como "Login" -->
+
+{% block content %}
+<div class="login-container"> <!-- Container principal da área de login -->
+    {% if messages %} <!-- Verifica se existem mensagens (como erros ou notificações) a serem exibidas -->
+    <ul class="messages"> <!-- Lista para exibir mensagens de feedback -->
+        {% for message in messages %} <!-- Itera sobre cada mensagem presente no contexto -->
+        <li class="{{ message.tags }}">{{ message }}</li> <!-- Exibe cada mensagem com a classe CSS baseada em suas tags (como 'error' ou 'success') -->
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <!-- Logo do sistema -->
+    <img src="{% static 'images/nexus-logo.png' %}" alt="NEXUS Logo" class="logo"> <!-- Exibe o logo do Nexus carregado dos arquivos estáticos -->
+
+    <!-- Botão para login com Microsoft -->
+    <a href="{% url 'social:begin' 'azuread-tenant-oauth2' %}?prompt=login" class="btn-login"> <!-- Link para início do login com Microsoft via OAuth2, usando o backend do Django Social Auth -->
+        Login
+    </a>
+</div>
+{% endblock %} <!-- Fim do bloco de conteúdo principal -->
+
+{% block footer %}
+<footer class="footer"> <!-- Bloco de rodapé da página -->
+    <div class="container">
+        <span>&copy; 2024 Nexus Liberta. Todos os direitos reservados.</span> <!-- Texto de direitos autorais -->
+    </div>
+</footer>
+{% endblock %} <!-- Fim do bloco de rodapé -->

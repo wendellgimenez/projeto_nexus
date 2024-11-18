@@ -1,0 +1,102 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Metas{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/metas-styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Metas</h1>
+
+<!-- Filtros de Cargo e Período -->
+<div class="filter-div">
+    <form method="get" action="{% url 'metas' %}">
+        <div class="row mb-3">
+            <!-- Dropdown Cargo -->
+            <div class="div-filter col-md-4">
+                <label for="cargo">Cargo:</label>
+                <select name="cargo" id="cargo" class="form-control" required>
+                    <option value="">Selecione um Cargo</option>
+                    {% for cargo in cargos %}
+                    <option value="{{ cargo }}" {% if cargo == cargo_selecionado %}selected{% endif %}>{{ cargo }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <!-- Dropdown Período -->
+            <div class="div-filter col-md-4">
+                <label for="periodo">Período:</label>
+                <select name="periodo" id="periodo" class="form-control" required>
+                    <option value="">Selecione um Período</option>
+                    {% for periodo in periodos %}
+                        <option value="{{ periodo }}" {% if periodo == periodo_selecionado %}selected{% endif %}>{{ periodo }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <!-- Botão Exibir -->
+            <div class="col-md-4 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">Exibir</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% if cargo_selecionado or periodo_selecionado %}
+<!-- Exibindo a div com os filtros aplicados -->
+<div class="card-div filter-summary mb-4">
+    <p><strong>Cargo:</strong> {{ cargo_selecionado|default:"Nenhum" }}</p>
+    <p><strong>Período:</strong> {{ periodo_selecionado|default:"Nenhum" }}</p>
+</div>
+{% endif %}
+
+<!-- Tabela com os Dados Filtrados -->
+{% if data %}
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped metas-table">
+            <thead>
+                <tr>
+                    <th>Senioridade</th>
+                    <th>Abrangência</th>
+                    <th>Indicador</th>
+                    <th>Valor Meta</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr data-id="{{ item.senioridade }}|{{ item.abrangencia }}|{{ item.indicador }}">
+                    <td class="senioridade">{{ item.senioridade }}</td>
+                    <td class="abrangencia">{{ item.abrangencia }}</td>
+                    <td class="indicador">{{ item.indicador }}</td>
+                    <td class="valor_meta">
+                        <input type="text" class="form-control valor-meta-input" value="{{ item.valor_meta }}" readonly>
+                    </td>
+                    <td>
+                        <button class="btn btn-edit btn-sm" onclick="editarLinha(this)">Editar</button>
+                        <button class="btn btn-danger btn-sm" onclick="excluirLinha('{{ item.senioridade }}|{{ item.abrangencia }}|{{ item.indicador }}')">Excluir</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const senioridades = {{ senioridades|safe }};
+    const abrangencias = {{ abrangencias|safe }};
+    const indicadores = {{ indicadores|safe }};
+    const atualizarMetaUrl = "{% url 'atualizar_meta' %}";
+    const csrfToken = "{{ csrf_token }}";
+</script>
+{% endif %}
+
+{% block extra_js %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/handsontable@11.0.1/dist/handsontable.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/metas.js' %}"></script>
+{% endblock %}
+{% endblock %}
